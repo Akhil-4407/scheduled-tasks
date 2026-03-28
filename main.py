@@ -13,7 +13,7 @@ PARAMETERS= {
 response = requests.get(url="https://api.openweathermap.org/data/2.5/forecast",params=PARAMETERS)
 response.raise_for_status()
 data = response.json()
-codes = [400]
+codes = []
 for i in data["list"]:
     codes.append(i["weather"][0]["id"])
 will_rain = False
